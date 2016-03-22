@@ -1,13 +1,15 @@
 import React from "react";
+import Item from "./toolbarItem"
 
 export default React.createClass({
   render: function() {
     return (
-		<nav className="navbar navbar-masthead navbar-default navbar-fixed-top">
-		  <div className="container">
-		    <button>Refresh</button>
-		  </div>
-		</nav>
+    	<tbody>
+			<ul className="toolbar">
+			  	<Item right={true}>Popup</Item>
+				<Item right={true}>Refresh</Item>
+			</ul>
+		</tbody>
 	);
   },
 });

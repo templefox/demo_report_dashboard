@@ -8,8 +8,14 @@ export default React.createClass({
   			isLoading:true,
   			width:0,
   			height:0,
+        src:"http://localhost:8080/app/test.html"
   		};
   	},
+    componentDidMount: function() {    
+      if (window.addEventListener) {
+        window.addEventListener('hashchange', this.onHashChange, false);
+      }
+    },
   	innerIframe() {
         return this.refs.frame.refs.iframe
     },
@@ -25,7 +31,7 @@ export default React.createClass({
   		}
 
     	return (                   
-			<Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src="http://localhost:8080/app/test.html"/>
+			<Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src={this.state.src}/>
 		);  
     },
 	_iframeLoaded: function() {
@@ -37,5 +43,14 @@ export default React.createClass({
 	      width:w,
 	      height:h,
 	    });
-  	}
+  	},  
+    onHashChange:function(e) {
+      console.log(e)
+      var index = e.newURL.indexOf('#')
+      var src = e.newURL.substring(index+1)
+      console.log(src)
+      this.setState({
+        src:"http://localhost:8080/app/test.html?" + src
+      })
+    }
 });

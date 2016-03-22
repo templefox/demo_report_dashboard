@@ -3,16 +3,15 @@ import { findDOMNode } from 'react-dom'
 
 export default React.createClass({  
   propTypes:{
-    name: React.PropTypes.string.isRequired,
-    onClick:React.PropTypes.func,
+    obj: React.PropTypes.object.isRequired,
   },
   componentDidMount: function() {
     //this.refs.iframe.getDOMNode().addEventListener('load', this.props.onLoad);
-    findDOMNode(this).addEventListener('onClick', this.props.onClick);
+    //findDOMNode(this).addEventListener('onClick', this.props.onClick);
   },
   render: function() {
     return (
-      <button {...this.props} > {this.props.name} </button>
+      <li><a href={"#"+this.props.obj.report_id}> {this.props.obj.title}</a></li>
     );
   },
 });

@@ -7,7 +7,6 @@ export default React.createClass({
   	onLoad:React.PropTypes.func,
   },
   componentDidMount: function() {
-    //this.refs.iframe.getDOMNode().addEventListener('load', this.props.onLoad);
     findDOMNode(this.refs.iframe).addEventListener('load', this.props.onLoad);
   },
   render: function() {
