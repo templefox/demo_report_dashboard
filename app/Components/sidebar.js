@@ -24,18 +24,14 @@ export default React.createClass({
 
    	var nodeObj = this.state.repository?this.state.repository[0]:{}	
 
-	var node = <TreeNode obj={nodeObj} name="222" onClick={this.handleOnClick} />
+	var node = <TreeNode indent={15} obj={nodeObj} visible={true}/>
 
     return (
 		<nav className="sidebar-left">
-		  <div className="container">
+		  <div>
 		  	{node}
 		  </div>
 		</nav>
 	);
   },
-
-  handleOnClick: function(e){
-  	alert("a")
-  }
 });

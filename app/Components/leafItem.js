@@ -11,7 +11,7 @@ export default React.createClass({
   },
   render: function() {
     return (
-      <li><a href={"#"+this.props.obj.report_id}> {this.props.obj.title}</a></li>
+      <li className='leaf'><nobr><a href={"#"+this.props.obj.report_id}>{this.props.obj.title}</a></nobr></li>
     );
   },
 });

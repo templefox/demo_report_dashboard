@@ -35,7 +35,7 @@
 	margin-top: 0px;
 	margin-left: -8px;
 	margin-bottom: 20px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .main-content{
@@ -51,4 +51,52 @@
 iframe{
 	display: block;
 	border: none;
+}
+
+.invisible{
+	display: none;
+}
+
+li.directory{
+    width: inherit;
+    height: 25px;
+    background-color: #d9ebf6;
+
+}
+
+.leaf{
+	border-top: thin solid #DDDDDD;
+}
+
+li{
+	list-style: none;
+}
+
+li.directory:hover { 
+    background-color: #4da6ff;
+}
+
+li.leaf:hover { 
+    background-color: #aaaaaa;
+}
+
+li.disabled{
+	cursor: not-allowed;
+}
+
+ul{
+	padding-left: 0;
+	margin: 0;
+	text-indent: 10px;
+}
+
+button.d{
+	border: none;
+	width: inherit;
+    height: 25px;
+    padding: 0px;
+    text-align: left;
+    background-color: transparent;
+    color: black;
+    cursor: inherit;
 }
