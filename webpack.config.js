@@ -29,11 +29,11 @@ module.exports = {
 		}
 		],
 	},
-	devtool: 'eval-source-map',
+	devtool: 'source-map',
 	devServer: {
 		historyApiFallback: true,
 		hot: true,
 		inline: true,
 		progress: true,
-	},
+	},  
 }

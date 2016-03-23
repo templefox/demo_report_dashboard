@@ -1,5 +1,6 @@
 import React from "react";
 import TreeNode from "./treeNode"
+import request from 'superagent'
 
 export default React.createClass({
 	propTypes:{
@@ -14,11 +15,12 @@ export default React.createClass({
 	},
 	componentDidMount:function() {
 		var category;
-		fetch('/app/test.json')
-			.then((response)=> response.text())
-			.then((responseText)=>{
+		request.get('../repository')
+			.withCredentials()
+			.end((err,res)=>{
+				debugger
 				this.setState({
-					repository:JSON.parse(responseText)
+					repository:JSON.parse(res.text)
 				})
 			})
 	},

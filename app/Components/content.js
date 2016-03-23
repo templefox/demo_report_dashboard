@@ -8,7 +8,7 @@ export default React.createClass({
   			isLoading:true,
   			width:0,
   			height:0,
-        src:"http://localhost:8080/app/test.html"
+        src:"app/test.html"
   		};
   	},
     componentDidMount: function() {    

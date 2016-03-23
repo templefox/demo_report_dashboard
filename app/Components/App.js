@@ -7,8 +7,9 @@ import Content from './content'
 export default React.createClass({  	
 	getInitialState: function() {
       var id = window.location.hash.substring(1).replace(/"|\\/g,"")
+      var src = "./test.html?" + id;
   		return {
-        src:"http://localhost:8080/app/test.html?" +id,
+        src: src,
         report_id:id,
   		};
   	},
@@ -28,9 +29,10 @@ export default React.createClass({
     },
     onHashChange:function(e) {
       var index = e.newURL.indexOf('#')
-      var rid = e.newURL.substring(index+1)
+      var rid = e.newURL.substring(index+1)      
+      var src = "./test.html?" + id;
       this.setState({
-        src:"http://localhost:8080/app/test.html?" + rid,
+        src: src,
         report_id:rid,
       })
     }
