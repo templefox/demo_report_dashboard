@@ -6,20 +6,32 @@ import Content from './content'
 
 export default React.createClass({  	
 	getInitialState: function() {
+      var id = window.location.hash.substring(1).replace(/"|\\/g,"")
   		return {
-  			isLoading:true,
-  			width:0,
-  			height:0,
-        src:"http://localhost:8080/app/test.html",
+        src:"http://localhost:8080/app/test.html?" +id,
+        report_id:id,
   		};
   	},
+    componentDidMount: function() {    
+      if (window.addEventListener) {
+        window.addEventListener('hashchange', this.onHashChange, false);
+      }
+    },
   	render: function() {
   		return(
         <div>   
-          <Sidebar/>
+          <Sidebar report={this.state.report_id}/>
           <Toolbar/>
-          <Content />
+          <Content src={this.state.src} />
         </div>
       )
     },
+    onHashChange:function(e) {
+      var index = e.newURL.indexOf('#')
+      var rid = e.newURL.substring(index+1)
+      this.setState({
+        src:"http://localhost:8080/app/test.html?" + rid,
+        report_id:rid,
+      })
+    }
 });

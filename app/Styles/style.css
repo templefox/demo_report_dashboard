@@ -80,8 +80,16 @@ li.leaf:hover {
     background-color: #aaaaaa;
 }
 
+li.leaf.current:hover{
+	background-color: #0099cc;
+}
+
+li.current{
+	background-color: #00ccff;
+}
+
 li.disabled{
-	cursor: not-allowed;
+	display: none;
 }
 
 ul{

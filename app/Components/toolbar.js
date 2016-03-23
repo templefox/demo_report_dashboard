@@ -7,9 +7,12 @@ export default React.createClass({
     	<tbody>
 			<ul className="toolbar">
 			  	<Item right={true}>Popup</Item>
-				<Item right={true}>Refresh</Item>
+				<Item onClick={this.onClickHandler} right={true}>Refresh</Item>
 			</ul>
 		</tbody>
 	);
   },
+  onClickHandler:function(e) {
+  	alert(e)
+  }
 });

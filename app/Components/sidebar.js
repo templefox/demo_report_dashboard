@@ -2,6 +2,9 @@ import React from "react";
 import TreeNode from "./treeNode"
 
 export default React.createClass({
+	propTypes:{
+    	report:React.PropTypes.string
+  	}, 
 	getInitialState: function() {
     	return {
 			repository:null,
@@ -15,20 +18,19 @@ export default React.createClass({
 			.then((response)=> response.text())
 			.then((responseText)=>{
 				this.setState({
-							repository:JSON.parse(responseText)
+					repository:JSON.parse(responseText)
 				})
 			})
 	},
   render: function() {
    	console.log(this.state.repository)
 
-   	var nodeObj = this.state.repository?this.state.repository[0]:{}	
-
-	var node = <TreeNode indent={15} obj={nodeObj} visible={true}/>
+   	var nodeObj = this.state.repository?this.state.repository[0]:{}
+	var node = <TreeNode indent={15} obj={nodeObj} report={this.props.report} visible={true}/>
 
     return (
 		<nav className="sidebar-left">
-		  <div>
+		  <div style={{'display':'inline-block','min-width':'100%'}}>
 		  	{node}
 		  </div>
 		</nav>

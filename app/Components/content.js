@@ -31,7 +31,7 @@ export default React.createClass({
   		}
 
     	return (                   
-			<Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src={this.state.src}/>
+			<Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src={this.props.src}/>
 		);  
     },
 	_iframeLoaded: function() {
