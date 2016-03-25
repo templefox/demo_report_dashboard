@@ -2,6 +2,7 @@ import React from "react";
 import { findDOMNode } from 'react-dom'
 import Leaf from './leafItem'
 import cx from "classnames"
+import values from '../values'
 
 const TreeNode = React.createClass({  
   
@@ -41,8 +42,9 @@ const TreeNode = React.createClass({
     if(reports){
       var subReports = reports.map(
         function(r) {
+          var key = that.key + "-report_id" + r.report_id
           return(
-            <Leaf obj={r} current={report}/>
+            <Leaf key={key} obj={r} current={report}/>
             )
         }
       )
@@ -51,20 +53,26 @@ const TreeNode = React.createClass({
       var subcates = sub_categories.map(
         function(cate) {
           var contains = that.containsReport(cate,report)
+          var key = that.key + "-category_id" + cate.category_id
           return(
-            <TreeNode indent={indent} obj={cate} visible={contains} report={report} />
+            <TreeNode key={key} indent={indent} obj={cate} visible={contains} report={report} />
             )
         }
       )
     }
 
+    let all_height = 0;
     if(subcates || subReports)
+    {  
       var subNodes = [...subReports,...subcates]
+      if(this.state.visible)
+        all_height = subcates.length * values.directory_height + subReports.length * values.leaf_height
+    }
 
-
-    var classes = cx({
-        'invisible':!this.state.visible,
-    })
+    var style = {
+      'text-indent':this.props.indent,
+      'height':all_height,
+    }
 
     var li_class = cx(
     {
@@ -75,9 +83,9 @@ const TreeNode = React.createClass({
     return(
         <div>
           <li ref="category_li" className={li_class}><button disabled className='d' onClick={this.onClickHandler} ><nobr> {this.props.obj.category_name} </nobr></button> </li>
-          <ul style={{'text-indent':this.props.indent}} className={classes}>
-            {subNodes}
-          </ul>
+            <ul key={this.props.key} style={style} className="category-transition">
+              {subNodes}
+            </ul>
         </div>
       )
   },

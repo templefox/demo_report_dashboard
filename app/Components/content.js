@@ -7,15 +7,9 @@ export default React.createClass({
   		return {
   			isLoading:true,
   			width:0,
-  			height:0,
-        src:"app/test.html"
+  			height:0
   		};
   	},
-    componentDidMount: function() {    
-      if (window.addEventListener) {
-        window.addEventListener('hashchange', this.onHashChange, false);
-      }
-    },
   	innerIframe() {
         return this.refs.frame.refs.iframe
     },
@@ -43,14 +37,5 @@ export default React.createClass({
 	      width:w,
 	      height:h,
 	    });
-  	},  
-    onHashChange:function(e) {
-      console.log(e)
-      var index = e.newURL.indexOf('#')
-      var src = e.newURL.substring(index+1)
-      console.log(src)
-      this.setState({
-        src:"http://localhost:8080/app/test.html?" + src
-      })
-    }
+  	}
 });

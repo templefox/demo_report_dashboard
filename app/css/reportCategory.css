@@ -1,0 +1,64 @@
+.excel_category{
+	width: 100%;
+	height: 100px;
+}
+
+.category-transition{
+	overflow: hidden;
+	transition: height 0.5s linear;
+	-webkit-transition: height linear 0.5s;
+	-moz-transition: height linear 0.5s;
+	-o-transition: height linear 0.5s;
+}
+
+li.directory{
+    width: inherit;
+    height: 25px;
+    background-color: #d9ebf6;
+}
+
+li{
+	list-style: none;
+}
+
+li.directory:hover { 
+    background-color: #4da6ff;
+}
+
+li.leaf:hover { 
+    background-color: #aaaaaa;
+}
+
+li.leaf.current:hover{
+	background-color: #0099cc;
+}
+
+li.current{
+	background-color: #00ccff;
+}
+
+li.disabled{
+	display: none;
+}
+
+ul{
+	padding-left: 0;
+	margin: 0;
+	text-indent: 10px;
+}
+
+button.d{
+	border: none;
+	width: inherit;
+    height: 25px;
+    padding: 0px;
+    text-align: left;
+    background-color: transparent;
+    color: black;
+    cursor: inherit;
+}
+
+.leaf{
+	border-top: thin solid #DDDDDD;
+	height: 20px;
+}

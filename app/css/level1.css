@@ -1,0 +1,17 @@
+div.left_block{
+	width: 250px;
+	display: table-cell;
+	height: 100%
+}
+
+div.right_block{
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+}
+
+#root{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
