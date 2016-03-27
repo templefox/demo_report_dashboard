@@ -1,17 +1,21 @@
 import React from "react";
 import { findDOMNode } from 'react-dom'
-import ReportCategory from './sidebar/sidebar'
+import ReportCategory from './sidebar/category'
 import Tanent from './sidebar/tanent'
 
 export default React.createClass({
   propTypes:{
-  	report: React.PropTypes.string.isRequired,
+  	selected_report: React.PropTypes.string.isRequired,
   },
   render: function() {
+    var style={
+      width:'inherit',
+      overflow:'hidden',
+    }
     return (
-      <div>
+      <div style={style}>
         <Tanent name="xxx"/>
-        <ReportCategory report={this.props.report}/>
+        <ReportCategory {...this.props}/>
       </div>
     );
   },

@@ -4,12 +4,12 @@ import cx from "classnames"
 export default React.createClass({  
   propTypes:{
     obj: React.PropTypes.object.isRequired,
-    current: React.PropTypes.string
+    selected_report: React.PropTypes.string
   },
 
   render: function() {
     var classes = cx({
-      'current':this.props.current === this.props.obj.report_id,
+      'current':this.props.selected_report === this.props.obj.report_id,
       'leaf':true
     })
     return (

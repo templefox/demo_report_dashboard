@@ -1,12 +1,12 @@
 import React from "react";
 import Item from "./toolbarItem"
 
-export default React.createClass({
+export default React.createClass({  
   render: function() {
     return (
 			<ul className="toolbar">
-			  	<Item right={true}>Popup</Item>
-				<Item onClick={this.onClickHandler} right={true}>Refresh</Item>
+			  	<Item onClick={this.props.hideSidebar} right={true}>Popup</Item>
+				  <Item onClick={this.onClickHandler} right={true}>Refresh</Item>
 			</ul>
 	);
   },

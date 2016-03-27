@@ -9,7 +9,7 @@ export default React.createClass({
   	},
   componentDidMount: function() {
     //this.refs.iframe.getDOMNode().addEventListener('load', this.props.onLoad);
-    findDOMNode(this.refs.li).addEventListener('onClick', this.props.onClick);
+    findDOMNode(this.refs.li).addEventListener('click', this.props.onClick);
   },
   render: function() {
   		var classes = cx({
@@ -17,7 +17,7 @@ export default React.createClass({
   			'toolbarItem':true
   		})
     return (
-		<li ref='li' className={classes}><a>{this.props.children}</a></li>
+		<li ref='li' style={{'border':'solid'}} className={classes}><a>{this.props.children}</a></li>
 	);
   },
 });

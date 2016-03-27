@@ -15,8 +15,13 @@ module.exports = {
 	module: {
 		loaders: [
 		{
-			test: /\.html$/,
+			test: /\.(html)$/,
 			loader: "file?name=[name].[ext]",
+		},
+		{
+			test: /\.(eot|svg|ttf|woff)$/,
+			path: "./fonts",
+			loader: "url-loader?limit=100000"
 		},
 		{
 			test: /\.jsx?$/,
@@ -26,7 +31,7 @@ module.exports = {
 		{
 			test: /\.css/,
 			loaders: [ 'style', 'css'],
-		}
+		},
 		],
 	},
 	devtool: 'source-map',
