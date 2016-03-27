@@ -1,0 +1,11 @@
+iframe{
+	display: block;
+	border: none;
+}
+
+.main-content{
+	position: relative;
+	margin: 2rem;
+	width: 100%;
+	height: 100%;
+}
