@@ -29,7 +29,7 @@ const TreeNode = React.createClass({
     render: function() {
         var sub_categories = this.props.obj.sub_categories
         var reports = this.props.obj.reports
-        var indent = this.props.indent + 15;
+        var indent = this.props.indent + values.tree_indent;
         var selected_report = this.props.selected_report
         var that = this
         if (reports) {
@@ -71,10 +71,17 @@ const TreeNode = React.createClass({
             'disabled': subNodes && subNodes.length === 0,
             'directory': true,
         })
+        
+        let isRoot = this.props.obj.category_name===values.root_name
+        var icon = cx({
+            'icon icon-folder': !isRoot&&!this.state.visible,
+            'icon icon-folder-open': !isRoot&&this.state.visible,
+            'icon icon-paper': isRoot
+        })
 
         return (
             <div>
-                <li ref="category_li" className={li_class}><nobr> {this.props.obj.category_name} </nobr></li>
+                <li ref="category_li" className={li_class}><nobr><i className={icon}></i> {this.props.obj.category_name} </nobr></li>
                 <ul key={this.props.key} ref="report_list_ul" style={style}>
                   {subNodes}
                 </ul>

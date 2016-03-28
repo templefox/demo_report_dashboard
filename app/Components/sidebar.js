@@ -14,7 +14,7 @@ export default React.createClass({
     }
     return (
       <div style={style}>
-        <Tanent name="xxx"/>
+        <Tanent name="user"/>
         <ReportCategory {...this.props}/>
       </div>
     );

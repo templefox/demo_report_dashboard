@@ -12,7 +12,7 @@ export default React.createClass({
             'toolbarItem': true
         })
         return (
-            <li ref='li' {...this.props} className={classes}><button><i className='icon icon-list'></i></button></li>
+            <li ref='li' {...this.props}  className={classes}><a><button><i className='icon icon-list'></i></button></a></li>
         );
     },
 });

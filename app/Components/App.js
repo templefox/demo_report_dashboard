@@ -12,8 +12,8 @@ export default React.createClass({
     getInitialState: function() {
         var search = window.location.search
         var id = search ? search.substring(1) : window.location.hash.substring(1).replace(/"|\\/g, "")
-        //var src = "../report/" + id + "/html";
-        var src = "/app/test.html"
+        var src = "../report/" + id + "/html";
+        //var src = "/app/test.html"
         return {
             src: src,
             report_id: id,
@@ -38,10 +38,10 @@ export default React.createClass({
               <div style={left_block_width} className="left_block">
                 <Sidebar ref='sidebar' selected_report={this.state.report_id}/>
               </div>
-              <table className="right_block">
+              <div className="right_block">
                 <tr>
                   <td>
-                    <Toolbar hideSidebar={this.onHideSidebar} refresh={this.onRefreshIframe}/>
+                    <Toolbar hideSidebar={this.onHideSidebar} refresh={this.onRefreshIframe} src={this.state.src}/>
                   </td>
                 </tr>
                 <tr>
@@ -49,15 +49,15 @@ export default React.createClass({
                     <Content ref='content' src={this.state.src} />
                   </td>
                 </tr>
-              </table>
+              </div>
             </div>
         )
     },
     onHashChange: function(e) {
         var index = e.newURL.indexOf('#')
         var rid = e.newURL.substring(index + 1)
-        //var src = "../report/" + rid + "/html";
-        var src = "/app/test.html"
+        var src = "../report/" + rid + "/html";
+        //var src = "/app/test.html"
         this.setState({
             src: src,
             report_id: rid,

@@ -36,6 +36,6 @@ export default React.createClass({
         var style = {
             float: 'right',
         }
-        return <Download onClick={this.onClickHandler} style={style} />
+        return <Download href={this.props.src} style={style} />
     }
 });

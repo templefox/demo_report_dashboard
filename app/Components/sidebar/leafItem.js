@@ -13,7 +13,7 @@ export default React.createClass({
       'leaf':true
     })
     return (
-      <li className={classes}><nobr><a href={"#"+this.props.obj.report_id}>{this.props.obj.title}</a></nobr></li>
+      <li className={classes}><nobr><i className="icon icon-item"></i><a href={"#"+this.props.obj.report_id}>{this.props.obj.title}</a></nobr></li>
     );
   },
 });

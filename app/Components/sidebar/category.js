@@ -1,6 +1,7 @@
 import React from "react";
 import TreeNode from "./treeNode"
 import request from 'superagent'
+import values from '../values'
 
 export default React.createClass({
     propTypes: {
@@ -17,8 +18,11 @@ export default React.createClass({
         request.get('/app/test.json')
             .withCredentials()
             .end((err, res) => {
+                let repo = JSON.parse(res.text)
+                repo[0].category_name = values.root_name
+                console.log(repo)
                 this.setState({
-                    repository: JSON.parse(res.text)
+                    repository: repo
                 })
             })
     },
@@ -28,7 +32,7 @@ export default React.createClass({
 
         var props = {
             key: key,
-            indent: 15,
+            indent: values.tree_indent,
             obj: nodeObj,
             visible: true,
         }

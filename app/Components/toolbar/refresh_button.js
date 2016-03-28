@@ -11,8 +11,13 @@ export default React.createClass({
         var classes = cx({
             'toolbarItem': true
         })
+
+        var style = {
+            position:'fixed',
+            right:'2rem'
+        }
         return (
-            <li ref='li' {...this.props} className={classes}><button><i className='icon icon-refresh'></i></button></li>
+            <li ref='li' {...this.props} className={classes}><a><button><i className='icon icon-refresh'></i></button></a></li>
         );
     },
 });

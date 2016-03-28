@@ -14,19 +14,36 @@
 li.directory{
     width: inherit;
     height: 25px;
-    background-color: #d9ebf6;
+    background-color: transparent;
 }
 
 li{
 	list-style: none;
 }
 
-li.directory:hover { 
-    background-color: #4da6ff;
+li.leaf:hover,li.directory:hover{ 
+    background-color: #3394CE;
 }
 
-li.leaf:hover { 
-    background-color: #aaaaaa;
+li.directory:hover span{
+	color: white;
+}
+
+li.directory:hover i:before{
+	color: orange;
+}
+
+li.leaf a{
+	text-decoration: none;
+	color: black;
+}
+
+li.leaf:hover i:before{
+	color:orange;
+}
+
+li.leaf:hover a{ 
+	color: white;
 }
 
 li.leaf.current:hover{
@@ -34,7 +51,7 @@ li.leaf.current:hover{
 }
 
 li.current{
-	background-color: #00ccff;
+	background-color: #07C5C3;
 }
 
 li.disabled{
@@ -60,8 +77,11 @@ button.d{
 }
 
 .leaf{
-	border-top: thin solid #DDDDDD;
-	height: 20px;
+	height: 1.5rem;
+}
+
+.directory{
+	height: 1.5rem;
 }
 
 .tanent{

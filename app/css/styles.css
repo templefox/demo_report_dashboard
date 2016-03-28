@@ -40,17 +40,39 @@
 
 .icon-user:before {
   content: "\61";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  align-self: ;
 }
 .icon-list:before {
   content: "\63";
-  font-size: 1rem;
 }
 .icon-refresh:before {
   content: "\62";
-  font-size: 1rem;
 }
 .icon-download:before {
   content: "\64";
+}
+.icon-folder:before {
+  content: "\65";
+  font-size: 0.8rem;
+  color: #35B1EB;
+  margin-right: 0.5rem;
+}
+.icon-folder-open:before {
+  content: "\66";
+  font-size: 0.8rem;
+  color: #35B1EB;
+  margin-right: 0.5rem;
+}
+.icon-item:before {
+  content: "\67";
+  color: blue;
+  font-size: 0.5rem;
+  margin-right: 0.5rem;
+}
+.icon-paper:before {
+  content: "\68";
+  color: black;
   font-size: 1rem;
+  vertical-align: sub;
 }

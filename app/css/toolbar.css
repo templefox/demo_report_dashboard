@@ -1,5 +1,31 @@
-.toolbar{
-	z-index: 999;
-	list-style-type: none;
-	overflow: hidden;
+.toolbar {
+    z-index: 999;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.toolbarItem a {
+    color: black;
+    text-decoration: none;
+}
+
+.toolbarItem button {
+    border: none;
+    margin: 0 auto;
+    padding: 4px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
+}
+
+.toolbarItem button:focus {
+	outline:none;
+}
+
+.toolbarItem button:hover{
+    background: rgba(0, 0, 1, 0.1);
 }
