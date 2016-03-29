@@ -28,12 +28,13 @@ export default React.createClass({
         this.tweenState('width', {
             easing: easingTypes.easeInOutQuad,
             duration: 1,
-            endValue: 20,
+            endValue: 0,
         });
     },
     render: function() {
-        var left_block_width = { width: this.getTweeningValue('width') + 'rem' } //{width:this.state.width}
-        return (
+        let width = this.getTweeningValue('width')
+        var left_block_width = { width: width + 'px' } //{width:this.state.width}
+         return (
             <div id="container">   
               <div style={left_block_width} className="left_block">
                 <Sidebar ref='sidebar' selected_report={this.state.report_id}/>
@@ -41,7 +42,7 @@ export default React.createClass({
               <div className="right_block">
                 <tr>
                   <td>
-                    <Toolbar hideSidebar={this.onHideSidebar} refresh={this.onRefreshIframe} src={this.state.src}/>
+                    <Toolbar width={width} hideSidebar={this.onHideSidebar} refresh={this.onRefreshIframe} src={this.state.src}/>
                   </td>
                 </tr>
                 <tr>
@@ -66,9 +67,9 @@ export default React.createClass({
     onHideSidebar: function() {
         this.tweenState('width', {
             easing: easingTypes.easeInOutQuad,
-            startValue: this.state.width === 0 ? 0 : 20,
+            startValue: this.state.width === 0 ? 0 : 350,
             duration: 250,
-            endValue: this.state.width === 0 ? 20 : 0,
+            endValue: this.state.width === 0 ? 350 : 0,
         });
     },
     onRefreshIframe:function() {

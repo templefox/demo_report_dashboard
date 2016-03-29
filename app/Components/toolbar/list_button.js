@@ -4,7 +4,7 @@ import { findDOMNode } from 'react-dom'
 
 export default React.createClass({
     propTypes: {
-        onClick: React.PropTypes.func,
+        sideWidth: React.PropTypes.func,
         style: React.PropTypes.object
     },
     render: function() {

@@ -5,19 +5,44 @@ import Refresh from "./refresh_button"
 import Download from "./download_button"
 
 export default React.createClass({
+    offset:0,
+    getInitialState: function() {
+        return {
+            width: this.props.width,
+        };
+    },
+    componentDidMount: function() {
+        this.setState({
+            width:window.innerWidth - this.offset
+        })
+
+        window.addEventListener('scroll',() => {
+            if(this.state.width === window.innerWidth - this.offset + window.scrollX) return
+            this.setState({
+                width:window.innerWidth - this.offset + window.scrollX
+            })
+        })
+
+        window.addEventListener('resize',() => {
+            this.setState({
+                width:window.innerWidth - this.offset
+            })
+        })
+    },
     render: function() {
+        this.offset = this.props.width + 50  
+        var style = {
+            width:window.innerWidth - this.offset + window.scrollX
+        }
         return (
-            <ul className="toolbar">
-							{this.listButton()}
-							{this.refreshButton()}
-							{this.downloadButton()}
-						</ul>
+            <ul className="toolbar" style={style}>
+                            {this.listButton()}
+                            {this.refreshButton()}
+                            {this.downloadButton()}
+                        </ul>
         );
     },
-    onClickHandler: function(e) {
-        alert(e)
-    },
-
+    
     listButton: function() {
         var style = {
             float: 'left',

@@ -4,10 +4,10 @@ div.left_block{
 	height: 100%;
 	vertical-align: top;
 	background: lightblue; 
-    background: -webkit-linear-gradient(#e6ffff, lightblue); 
-    background: -o-linear-gradient(#e6ffff, lightblue); 
-    background: -moz-linear-gradient(#e6ffff, lightblue); 
-    background: linear-gradient(#e6ffff, lightblue); 
+    background: -webkit-linear-gradient(#B8F9F9, lightblue); 
+    background: -o-linear-gradient(#B8F9F9, lightblue); 
+    background: -moz-linear-gradient(#B8F9F9, lightblue); 
+    background: linear-gradient(#B8F9F9, lightblue); 
     padding: .7rem .1rem .7rem .1rem;
 }
 

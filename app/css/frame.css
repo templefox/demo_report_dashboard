@@ -1,6 +1,7 @@
 iframe{
 	display: block;
 	border: none;
+	background-color: white;
 }
 
 .main-content{

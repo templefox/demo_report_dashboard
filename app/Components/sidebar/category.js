@@ -14,8 +14,8 @@ export default React.createClass({
     },
     componentDidMount: function() {
         var category;
-        //request.get('../repository')
-        request.get('/app/test.json')
+        request.get('../repository')
+        //request.get('/app/test.json')
             .withCredentials()
             .end((err, res) => {
                 let repo = JSON.parse(res.text)

@@ -30,14 +30,18 @@ export default React.createClass({
         );
     },
     _iframeLoaded: function() {
-        var h = this.innerIframe().contentWindow.document.body.scrollHeight
-        var w = this.innerIframe().contentWindow.document.body.scrollWidth
-
-        this.setState({
-            isLoading: false,
-            width: w,
-            height: h,
-        });
+        try{
+            var h = this.innerIframe().contentWindow.document.body.getElementsByTagName('table')[0].scrollHeight
+            var w = this.innerIframe().contentWindow.document.body.getElementsByTagName('table')[0].scrollWidth
+            console.log(w)
+            this.setState({
+                isLoading: false,
+                width: w + 50,
+                height: h + 50,
+            });
+        }catch(err){
+            //
+        }
     },
     refresh:function() {
       var frame = findDOMNode(this.refs.frame)
