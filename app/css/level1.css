@@ -3,11 +3,11 @@ div.left_block{
 	display: table-cell;
 	height: 100%;
 	vertical-align: top;
-	background: lightblue; 
-    background: -webkit-linear-gradient(#B8F9F9, lightblue); 
-    background: -o-linear-gradient(#B8F9F9, lightblue); 
-    background: -moz-linear-gradient(#B8F9F9, lightblue); 
-    background: linear-gradient(#B8F9F9, lightblue); 
+	background: linear-gradient(to bottom, #f5fbfc 0, #b1e8fa 100%) repeat-x scroll 0 0 #f5fbfc; 
+    background: -webkit-linear-gradient(to bottom, #f5fbfc 0, #b1e8fa 100%) repeat-x scroll 0 0 #f5fbfc; 
+    background: -o-linear-gradient(to bottom, #f5fbfc 0, #b1e8fa 100%) repeat-x scroll 0 0 #f5fbfc; 
+    background: -moz-linear-gradient(to bottom, #f5fbfc 0, #b1e8fa 100%) repeat-x scroll 0 0 #f5fbfc; 
+    background: linear-gradient(to bottom, #f5fbfc 0, #b1e8fa 100%) repeat-x scroll 0 0 #f5fbfc; 
     padding: .7rem .1rem .7rem .1rem;
 }
 
@@ -16,11 +16,11 @@ div.right_block{
 	height: 100%;
 	display: table-cell;
 	vertical-align: top;
-	background: #C6EDBE; 
-    background: -webkit-linear-gradient(to bottom right,lightblue, #C6EDBE); 
-    background: -o-linear-gradient(to bottom right,lightblue, #C6EDBE); 
-    background: -moz-linear-gradient(to bottom right,lightblue, #C6EDBE); 
-    background: linear-gradient(to bottom right,lightblue, #C6EDBE); 
+	background: linear-gradient(to bottom, rgba(185, 234, 253, 0.9), rgba(184, 233, 218, 0.9)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: -webkit-linear-gradient(to bottom, rgba(185, 234, 253, 0.9), rgba(184, 233, 218, 0.9)) repeat scroll 0 0 rgba(0, 0, 0, 0); 
+    background: -o-linear-gradient(to bottom, rgba(185, 234, 253, 0.9), rgba(184, 233, 218, 0.9)) repeat scroll 0 0 rgba(0, 0, 0, 0); 
+    background: -moz-linear-gradient(to bottom, rgba(185, 234, 253, 0.9), rgba(184, 233, 218, 0.9)) repeat scroll 0 0 rgba(0, 0, 0, 0); 
+    background: linear-gradient(to bottom, rgba(185, 234, 253, 0.9), rgba(184, 233, 218, 0.9)) repeat scroll 0 0 rgba(0, 0, 0, 0); 
     padding: .7rem;
 }
 
