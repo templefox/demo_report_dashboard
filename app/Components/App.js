@@ -12,10 +12,11 @@ export default React.createClass({
     getInitialState: function() {
         var search = window.location.search
         var id = search ? search.substring(1) : window.location.hash.substring(1).replace(/"|\\/g, "")
+        id = id.replace(/=$/,"")
         var src = "../report/" + id + "/html";
         //var src = "/app/test.html"
         return {
-            src: src,
+            src: id?src:"",
             report_id: id,
             width: '0',
         };
@@ -60,7 +61,7 @@ export default React.createClass({
         var src = "../report/" + rid + "/html";
         //var src = "/app/test.html"
         this.setState({
-            src: src,
+            src: rid?src:"",
             report_id: rid,
         })
     },

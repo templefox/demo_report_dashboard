@@ -1,5 +1,6 @@
 import React from "react";
 import Frame from "./frame"
+import Indicator from './indicator'
 import cx from "classnames"
 import { findDOMNode } from 'react-dom'
 
@@ -25,8 +26,15 @@ export default React.createClass({
             height: this.state.height
         }
 
+        if(this.state.isLoading){
+            var haveSrc = this.props.src?true:false
+            var indicator = <Indicator haveSrc={haveSrc}/>
+        }
         return (
-            <Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src={this.props.src}/>
+            <div>
+                {indicator}
+                <Frame ref="frame" className={classes} style={style} onLoad={this._iframeLoaded} src={this.props.src}/>
+            </div>
         );
     },
     _iframeLoaded: function() {
@@ -42,7 +50,8 @@ export default React.createClass({
         }catch(err){
             //
         }
-    },
+    }
+    ,
     refresh:function() {
       var frame = findDOMNode(this.refs.frame)
       //refresh

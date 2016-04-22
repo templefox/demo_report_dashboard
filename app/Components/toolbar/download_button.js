@@ -11,9 +11,9 @@ export default React.createClass({
         var classes = cx({
             'toolbarItem': true
         })
-
-        var reportId = /\/report\/(.*?)\/html/.exec(this.props.href)[1] + ".html"
-        
+        var match = /\/report\/(.*?)\/html/.exec(this.props.href)
+        if(match) var reportId = match[1] + ".html"
+        //var reportId = "xxx"
         var style = {
             position:'fixed',
             right:'4.5rem'
